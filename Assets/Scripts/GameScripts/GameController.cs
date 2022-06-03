@@ -22,3 +22,9 @@ public interface IDamagable
 
     void takeDamage(int ammount);
 }
+
+public interface IInteractable
+{
+    string getInteractPrompt();
+    void onInteract();
+}
