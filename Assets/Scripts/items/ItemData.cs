@@ -10,6 +10,14 @@ public enum ItemType
     Consumable
 }
 
+public enum ConsumableType
+{
+    Hunger,
+    Thirst,
+    Health,
+    Sleep
+}
+
 
 [CreateAssetMenu(fileName ="Item",menuName =" new Item")]
 public class ItemData : ScriptableObject
@@ -26,6 +34,13 @@ public class ItemData : ScriptableObject
     public bool canStack;
     public int maxStackAmount;
 
+    [Header("Consumable")]
+    public ItemDataConsumable[] consumables;
 
-
+}
+[System.Serializable]
+public class ItemDataConsumable
+{
+    public ConsumableType type;
+    public float value;
 }

@@ -16,6 +16,7 @@ MonoBehaviour:
   description: A tool for used to Chop wood
   type: 1
   icon: {fileID: 21300000, guid: 7cc5f6649cfcf944e9b83a23944167d7, type: 3}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 1665354919716316811, guid: c9fa90c4dd026d341b84df1f79f93996, type: 3}
   canStack: 0
   maxStackAmount: 1
+  consumables: []

@@ -16,6 +16,11 @@ MonoBehaviour:
   description: Foof you can eat
   type: 2
   icon: {fileID: 21300000, guid: 4280e3d4e9610d64eb474b0046975a6f, type: 3}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 4727224016003987274, guid: 18eb9ae8c0704ad488dbce1118728b43, type: 3}
   canStack: 1
   maxStackAmount: 128
+  consumables:
+  - type: 0
+    value: 50
+  - type: 1
+    value: 30

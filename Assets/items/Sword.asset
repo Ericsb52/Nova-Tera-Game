@@ -16,6 +16,7 @@ MonoBehaviour:
   description: A basic sword made of Iron
   type: 1
   icon: {fileID: 21300000, guid: ade14960517364e4d9d5293b1ce19b24, type: 3}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 5167612691458506210, guid: f9e90e363251b634aa40ec1a001dd84f, type: 3}
   canStack: 0
   maxStackAmount: 1
+  consumables: []

@@ -14,6 +14,8 @@ public class PlayerControler : MonoBehaviour
     public float lookSensitivity;
     private Vector2 mouseDelta;
 
+    public bool canLook = true;
+
     [Header("Player Properties")]
     public float maxHp;
     public float curHP;
@@ -47,7 +49,11 @@ public class PlayerControler : MonoBehaviour
 
     private void LateUpdate()
     {
-        cameraLook();
+        if (canLook == true)
+        {
+            cameraLook();
+        }
+        
     }
 
     private void FixedUpdate()
@@ -145,5 +151,13 @@ public class PlayerControler : MonoBehaviour
             }
         }
     }
+
+    public void toggleCursor(bool toggle)
+    {
+        Cursor.lockState = toggle?CursorLockMode.None:CursorLockMode.Locked;
+
+        canLook = !toggle;
+    }
+
 
 }//end of class

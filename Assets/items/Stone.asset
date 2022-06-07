@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Raw Stone  that can be used for building
   type: 0
   icon: {fileID: 21300000, guid: f1bf610eff0952c488c4f2b114f10877, type: 3}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 8192832264780962903, guid: 48a5464b7b09e0c46b26de2fa39e501c, type: 3}
   canStack: 1
   maxStackAmount: 128
+  consumables: []

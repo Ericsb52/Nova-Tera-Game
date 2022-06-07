@@ -13,6 +13,7 @@ public class ItemObject : MonoBehaviour,IInteractable
 
     public void onInteract()
     {
+        Inventory.instance.addItem(data);
         Destroy(gameObject);
     }
 }

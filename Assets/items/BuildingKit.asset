@@ -16,6 +16,7 @@ MonoBehaviour:
   description: used for building
   type: 2
   icon: {fileID: 21300000, guid: 236c1757cf6eb0f468541f8f5f3b8d08, type: 3}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 4587975899642199497, guid: 6e512f3d844054e46893b7784e5c7842, type: 3}
   canStack: 0
   maxStackAmount: 1
+  consumables: []
