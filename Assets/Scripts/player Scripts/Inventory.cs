@@ -239,16 +239,32 @@ public class Inventory : MonoBehaviour
 
     public void onUnEquipButton()
     {
-
+        unEquip(selectedItemIndex);
     }
     void unEquip(int index)
     {
-
+        uiSlots[index].equipred = false;
+        EquipMng.instance.unEquip();
+        updateUi();
+        if(selectedItemIndex == index)
+        {
+            selectItem(index);
+        }
+        
     }
 
     public void onEquipButton()
     {
+        if (uiSlots[curEquipIndex].equipred)
+        {
+            unEquip(curEquipIndex);
+        }
 
+        uiSlots[selectedItemIndex].equipred = true;
+        curEquipIndex = selectedItemIndex;
+        EquipMng.instance.equipNew(selectedItem.item);
+        updateUi();
+        selectItem(selectedItemIndex);
     }
 
     public void onDropButton()
