@@ -45,24 +45,42 @@ public class EquipTool : Equip
         {
             atticking = true;
             anim.SetTrigger("Attack");
-            Invoke("OnCanAttack", attackRate);
+            Invoke("onCanAttack", attackRate);
         }
-    }
-
-    public void onCanAttack()
-    {
-        atticking = true;
-    }
-
-    public void onHit()
-    {
-
     }
 
     public override void altAttack()
     {
         base.altAttack();
     }
+
+    public void onCanAttack()
+    {
+        atticking = false;
+    }
+
+    public void onHit()
+    {
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray,out hit, attackDistance))
+        {
+            //hit Resorce
+            if(doesGatherResources && hit.collider.GetComponent<Resource>())
+            {
+                hit.collider.GetComponent<Resource>().gather(hit.point, hit.normal);
+            }
+            //hit Enemy
+            if(doesDealDamage && hit.collider.GetComponent<IDamagable>() != null)
+            {
+                hit.collider.GetComponent<IDamagable>().takeDamage(damage);
+            }
+        }
+        Debug.Log("hit detected");
+    }
+
+   
 
 
 }
