@@ -44,7 +44,7 @@ public class Resource : MonoBehaviour
             Inventory.instance.addItem(itemToGive);
         }
 
-        Instantiate(hitParticle, hitpoint, Quaternion.LookRotation(hitNormal, Vector3.up));
+        Destroy(Instantiate(hitParticle, hitpoint, Quaternion.LookRotation(hitNormal, Vector3.up)),1.0f);
 
         if (capacity <= 0)
         {

@@ -289,13 +289,43 @@ public class Inventory : MonoBehaviour
         updateUi();
     }
 
-    void removeItem(ItemData item)
+    public void removeItem(ItemData item)
     {
-
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if(slots[i].item == item)
+            {
+                slots[i].quantity--;
+                if(slots[i].quantity == 0)
+                {
+                    if(uiSlots[i].equipred == true)
+                    {
+                        unEquip(i);
+                    }
+                    slots[i].item = null;
+                    clearSelectedItemWindow();
+                    
+                }
+                updateUi();
+                return;
+            }
+        }
     }
 
     public bool hasItem(ItemData item, int quantity)
     {
+        int amt = 0;
+        for(int i = 0; i<slots.Length; i++)
+        {
+            if(slots[i].item == item)
+            {
+                amt += slots[i].quantity;
+            }
+            if(amt >= quantity)
+            {
+                return true;
+            }
+        }
         return false;
     }
 }
